@@ -2,14 +2,15 @@ import logo from './logo.svg';
 import './App.css';
 import Postcard from "./Components/postCard"
 import React, { useState, useEffect, Component } from 'react';
-import {URL} from "./URLs.js"
+import {URL} from "./URLs.js";
+
 
 function App() {
 
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/posts')
+    fetch(`${URL}/posts`)
     .then(response => response.json())
     .then(response => setPosts(response.sort((a,b) => b.likecount - a.likecount)))
   }, []);
@@ -27,7 +28,7 @@ function App() {
     setPosts(tempPosts)
    
     
-    fetch(`http://localhost:3000/posts/${e.target.id}`, {
+    fetch(`${URL}/posts/${e.target.id}`, {
       method: 'PATCH',
       headers: {
         "Content-Type": "application/json;charset=utf-8",
