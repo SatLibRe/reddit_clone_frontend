@@ -10,6 +10,34 @@
 .postcard {
   border: solid;
   border-width: 2px;
+  border-color: #cccc;
   margin: 5%;
+  width: 25%;
+  margin-left: 20%;
+  background: #ffffff;
+  display: table;
+  height: 1px;
+}
+
+.table-cell:hover{
+  opacity: .5;
+}
+
+.table-cell{
+  display: table-cell;
+  padding-left: 5%;
+}
+
+.vote-div{
+  background-color: #F8F9FA;
+  height: 100%;
+  width: 15%;
+  display: table-cell;
+  text-align: center;
+}
+
+
+body {
+  background: #DAE0E6;
 }
 
