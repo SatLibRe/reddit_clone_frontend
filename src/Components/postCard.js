@@ -1,12 +1,14 @@
 import React from "react";
-
+import '../App.css';
 
 function Postcard(props){
     return(
-        <div>
-            <p id={props.post.id}> {props.post.title} {props.post.body} {props.post.likecount} </p>
-            <button id={props.post.id} className="upvote" onClick={props.handleVote}>Upvote here!</button>
-            <button id={props.post.id} className="downvote"onClick={props.handleVote}>Downvote here!</button>
+        <div className="postcard">
+            <p id={props.post.id}> Posted by u/{props.post.user.username}  on {props.post.user.created_at}</p>
+            <img style={{width: "4%"}} className={"thumbsup"} src="https://www.flaticon.com/svg/vstatic/svg/1533/1533908.svg?token=exp=1612147425~hmac=b72d94a00abf1330cca8516f1377c6e4" id={props.post.id} className="upvote" onClick={props.handleVote}/>
+            <img style={{width: "4%"}} className={"thumbsdown"} src="https://www.flaticon.com/svg/vstatic/svg/1533/1533914.svg?token=exp=1612147251~hmac=5cf55c5e871148e8a5da1cebd84e418c"id={props.post.id} className="downvote"onClick={props.handleVote}/>
+
+            {/* <link rel="icon" href="%PUBLIC_URL%/favicon.ico" /> */}
         </div>
     )
   }
